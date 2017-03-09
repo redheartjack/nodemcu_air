@@ -1,12 +1,18 @@
 -- declarations
+dofile("credentials")
 pinLED = 4
 pinDHT = 6 -- D6/GPIO12 <==> DHT11 data pin 2
 LW_Server = "open.lewei50.com"
-LW_Gateway = "02"
-LW_SN = "xxxxxxxxxxxxxx"
-INTERVAL_POST = 30000
-WIFI_SSID = "xxxx"
-WIFI_PWD = "xxxx"
+LW_Gateway = "01"
+--LW_SN = "xxxxxxxxxxxxxx"
+LW_ID_AQI = "aqi"
+LW_ID_PM25 = "pm25"
+LW_ID_PM100 = "pm100"
+LW_ID_Temp = "temp"
+LW_ID_Humi = "humi"
+--WIFI_SSID = "xxxx"
+--WIFI_PWD = "xxxx"
+INTERVAL_POST = 20000
 
 function startup()
     if file.open("init.lua") == nil then
