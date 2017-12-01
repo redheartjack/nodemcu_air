@@ -11,8 +11,8 @@ PWM_FREQ = 1000
 -- LED colors
 aqiColor = {}
 aqiColor[1] = {name="Green",r=0,g=255,b=0}      -- 0~50
-aqiColor[2] = {name="Yellow",r=255,g=255,b=0}   -- 51~100
---aqiColor[3] = {name="Orange",r=255,g=165,b=0}   -- 101~150
+--aqiColor[2] = {name="Yellow",r=255,g=255,b=0}   -- 51~100
+aqiColor[2] = {name="Orange",r=255,g=165,b=0}   -- 101~150
 aqiColor[3] = {name="Blue",r=0,g=0,b=255}   -- 101~150
 aqiColor[4] = {name="Red",r=255,g=0,b=0}        -- 151~200
 aqiColor[5] = {name="Purple",r=160,g=32,b=240}  -- 201~300
@@ -49,8 +49,8 @@ function ReadSensors()
     -- read pm2.5 from Plantower PMS5003 sensor
     if (pm25 ~= -1 ) then
         -- sensors["pm1"] = pm1
-        sensors[LW_ID_PM25] = pm25
-        sensors[LW_ID_PM10] = pm10
+        -- sensors[LW_ID_PM25] = pm25
+        -- sensors[LW_ID_PM10] = pm10
         local aqi
         local level = 0, 0
 
@@ -63,7 +63,7 @@ function ReadSensors()
         if (aqi10>aqi_us) then aqi_us=aqi10 end
 
         sensors[LW_ID_AQI] = aqi
-        sensors[LW_ID_AQI_US] = aqi_us
+        -- sensors[LW_ID_AQI_US] = aqi_us
         lcd.setCursor(0,0)
         lcd.print(string.format("AQI=%3d (US:%d)  ",aqi,aqi_us))
         lightAqiLED(level)   -- light on LED as AQI indicator

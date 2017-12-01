@@ -13,7 +13,7 @@ LW_ID_Temp = "temp"
 LW_ID_Humi = "humi"
 --WIFI_SSID = "xxxx"
 --WIFI_PWD = "xxxx"
-INTERVAL_POST = 30000   -- debug
+INTERVAL_POST = 60000   -- debug
 
 function startup()
     if file.open("init.lua") == nil then
